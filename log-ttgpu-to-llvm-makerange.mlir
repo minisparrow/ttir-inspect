@@ -52,14 +52,14 @@ module attributes {"ttg.num-ctas" = 1 : i32, "ttg.num-warps" = 1 : i32, ttg.shar
     %48 = llvm.add %39, %0 : i32
     %49 = llvm.add %41, %0 : i32
     %50 = llvm.mlir.undef : !llvm.struct<(i32, i32, i32, i32, i32, i32, i32, i32)>
-    %51 = llvm.insertvalue %42, %50[0] : !llvm.struct<(i32, i32, i32, i32, i32, i32, i32, i32)> 
-    %52 = llvm.insertvalue %43, %51[1] : !llvm.struct<(i32, i32, i32, i32, i32, i32, i32, i32)> 
-    %53 = llvm.insertvalue %44, %52[2] : !llvm.struct<(i32, i32, i32, i32, i32, i32, i32, i32)> 
-    %54 = llvm.insertvalue %45, %53[3] : !llvm.struct<(i32, i32, i32, i32, i32, i32, i32, i32)> 
-    %55 = llvm.insertvalue %46, %54[4] : !llvm.struct<(i32, i32, i32, i32, i32, i32, i32, i32)> 
-    %56 = llvm.insertvalue %47, %55[5] : !llvm.struct<(i32, i32, i32, i32, i32, i32, i32, i32)> 
-    %57 = llvm.insertvalue %48, %56[6] : !llvm.struct<(i32, i32, i32, i32, i32, i32, i32, i32)> 
-    %58 = llvm.insertvalue %49, %57[7] : !llvm.struct<(i32, i32, i32, i32, i32, i32, i32, i32)> 
+    %51 = llvm.insertvalue %42, %50[0] : !llvm.struct<(i32, i32, i32, i32, i32, i32, i32, i32)>
+    %52 = llvm.insertvalue %43, %51[1] : !llvm.struct<(i32, i32, i32, i32, i32, i32, i32, i32)>
+    %53 = llvm.insertvalue %44, %52[2] : !llvm.struct<(i32, i32, i32, i32, i32, i32, i32, i32)>
+    %54 = llvm.insertvalue %45, %53[3] : !llvm.struct<(i32, i32, i32, i32, i32, i32, i32, i32)>
+    %55 = llvm.insertvalue %46, %54[4] : !llvm.struct<(i32, i32, i32, i32, i32, i32, i32, i32)>
+    %56 = llvm.insertvalue %47, %55[5] : !llvm.struct<(i32, i32, i32, i32, i32, i32, i32, i32)>
+    %57 = llvm.insertvalue %48, %56[6] : !llvm.struct<(i32, i32, i32, i32, i32, i32, i32, i32)>
+    %58 = llvm.insertvalue %49, %57[7] : !llvm.struct<(i32, i32, i32, i32, i32, i32, i32, i32)>
     llvm.return
   }
 }
