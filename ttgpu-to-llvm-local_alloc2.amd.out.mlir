@@ -70,7 +70,7 @@ module attributes {"ttg.num-ctas" = 1 : i32, "ttg.num-warps" = 1 : i32, ttg.shar
     %64 = llvm.insertvalue %2, %63[0] : !llvm.struct<(ptr<3>, i32, i32)> 
     %65 = llvm.insertvalue %3, %64[1] : !llvm.struct<(ptr<3>, i32, i32)> 
     %66 = llvm.insertvalue %3, %65[2] : !llvm.struct<(ptr<3>, i32, i32)> 
-    rocdl.s.waitcnt -7937
+    rocdl.s.waitcnt 49279
     rocdl.s.barrier
     %67 = llvm.extractvalue %66[0] : !llvm.struct<(ptr<3>, i32, i32)> 
     %68 = llvm.extractvalue %66[1] : !llvm.struct<(ptr<3>, i32, i32)> 
