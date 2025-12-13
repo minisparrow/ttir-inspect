@@ -10,6 +10,7 @@ INPUT_FILE=$1
 backend=$2
 # 基于输入文件名创建输出文件名
 OUTPUT_FILE="${INPUT_FILE%.mlir}.${backend}.out.mlir"
+OUTPUT_PHASE2_FILE="${INPUT_FILE%.mlir}.${backend}.phase2.out.mlir"
 
 # 检查 triton-opt 命令是否存在
 if ! command -v triton-opt &> /dev/null
@@ -24,8 +25,8 @@ echo "正在处理 $INPUT_FILE..."
 
 if [ "${backend}" == "nv" ]; then
     echo "nvidia backend..."
-    #triton-opt --convert-triton-gpu-to-llvm --convert-nv-gpu-to-llvm "$INPUT_FILE" > "$OUTPUT_FILE"
     triton-opt --triton-nvidia-tma-lowering "$INPUT_FILE" > "$OUTPUT_FILE"
+    #triton-opt --allocate-shared-memory-nv -reconcile-unrealized-casts  --convert-triton-gpu-to-llvm --convert-nv-gpu-to-llvm  "$OUTPUT_FILE" > "$OUTPUT_PHASE2_FILE"
 else
     echo "amd backend..."
     triton-opt --convert-triton-amdgpu-to-llvm=arch=gfx942 "$INPUT_FILE" > "$OUTPUT_FILE"
